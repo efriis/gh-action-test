@@ -12,7 +12,8 @@ jobs:
             - name: Echo the comment
               env:
                 MY_SECRET: ${{ secrets.MY_SECRET }}
+                COMMENT_BODY: ${{ github.event.comment.body }}
               run: |
-                echo "${{ github.event.comment.body }}"
+                echo "$COMMENT_BODY"
 
                 
