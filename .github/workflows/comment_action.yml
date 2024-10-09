@@ -10,5 +10,7 @@ jobs:
 
         steps:
             - name: Echo the comment
+              env:
+                MY_SECRET: ${{ secrets.MY_SECRET }}
               run: |
                 echo "${{ github.event.comment.body }}"
