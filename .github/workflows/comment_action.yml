@@ -1,0 +1,14 @@
+name: Echo Pull Request Review Comment
+
+on:
+    pull_request_review_comment:
+        types: [created]
+
+jobs:
+    echo-comment:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Echo the comment
+              run: |
+                echo "${{ github.event.comment.body }}"
